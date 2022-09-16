@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,13 +10,31 @@ namespace CHSARPCLASS.Classes
     {
         public string Workplace { get; private set; }
         public int YoS { get; private set; }
+        public new int Age
+        {
+            get
+            {
+                return _age;
+            }
+            private set
+            {
+                AgeRestrictor(value);
+                _age = value;
+            }
+        }
+
+        public void SetAge (int age)
+        {
+            AgeRestrictor(age);
+            _age = age;
+        }
 
         public void YoSSet(int years)
         { YoS = years; }
 
         private void AgeRestrictor(int age)
         {
-            if (!(age >= 16) && !(age <= 34))
+            if (!((age >= 16) && (age <= 34)))
                 throw new Exception("Invlalid age!");
         }
 
