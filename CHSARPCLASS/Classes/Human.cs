@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,29 +8,33 @@ namespace CHSARPCLASS.Classes
 {
     public class Human
     {
+        protected string _name;
         public string Name
         {
             get
             {
-                return Name;
+                return _name;
             }
-            protected set
+            set
             {
                 Restrictor(value);
-                Name = value;
+                _name = value;
             }
         }
 
-        public void NameSet(string name)
+        protected int _age;
+        public int Age
         {
-            Restrictor(name);
-            Name = name;
+            get
+            {
+                return _age;
+            }
+            set
+            {
+                _age = value;
+            }
         }
-        public int Age { get; protected set; }
-        public void AgeSet(int age)
-        {
-            Age = age;
-        }
+
 
         public Human(string name, int age)
         {
