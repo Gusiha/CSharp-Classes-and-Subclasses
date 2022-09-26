@@ -25,8 +25,7 @@ namespace CHSARPCLASS.Classes
 
         public void SetAge (int age)
         {
-            AgeRestrictor(age);
-            _age = age;
+            Age = age;
         }
 
         public void YoSSet(int years)
@@ -34,7 +33,7 @@ namespace CHSARPCLASS.Classes
 
         private void AgeRestrictor(int age)
         {
-            if (!((age >= 16) && (age <= 34)))
+            if (!((age >= 16) && (age <= 70)))
                 throw new Exception("Invlalid age!");
         }
 

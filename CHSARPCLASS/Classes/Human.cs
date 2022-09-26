@@ -38,14 +38,13 @@ namespace CHSARPCLASS.Classes
 
         public Human(string name, int age)
         {
-            Restrictor(name);
             Name = name;
             Age = age;
         }
 
         protected void Restrictor(string name)
         {
-            if (name is null)
+            if (name == null)
                 throw new Exception("Name cannot be empty!");
         }
 

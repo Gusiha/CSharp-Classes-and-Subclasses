@@ -9,12 +9,13 @@ namespace Testing
         static void Main()
         {
             var Kenny = new Human("Kenny", 20);
+            Kenny.Name = null;
             Console.WriteLine(Kenny.Print());
             Kenny.Age = 20;
             Kenny.Name = "Kenny";
             Console.WriteLine(Kenny.Print());
 
-            var Kid = new Teenager("Paul", 14, "School 14");
+            var Kid = new Teenager("Paul", 15, "School 14");
             Console.WriteLine(Kid.Print());
             Kid.Name = "Lisa";
             Kid.SetAge(10);

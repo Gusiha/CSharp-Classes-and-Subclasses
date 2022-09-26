@@ -26,7 +26,7 @@ namespace CHSARPCLASS.Classes
             {
                 return _age;
             }
-            private set
+            set
             {
                 AgeRestrictor(value);
                 _age = value;
@@ -35,14 +35,13 @@ namespace CHSARPCLASS.Classes
 
         public Teenager(string name, int age, string schoolName) : base(name, age)
         {
-            AgeRestrictor(age);
+            Age = age;
             School = schoolName;
         }
 
         public void SetAge (int age)
         {
-            AgeRestrictor(age);
-            _age = age;
+            Age = age;
         }
 
         private void AgeRestrictor(int age)
@@ -51,10 +50,10 @@ namespace CHSARPCLASS.Classes
                 throw new Exception("Invalid age!");
         }
 
-        /*public void SchoolSet(string schoolName)
+        public void SchoolSet(string schoolName)
         {
             School = schoolName;
-        }*/
+        }
 
         public new string Print()
         {
