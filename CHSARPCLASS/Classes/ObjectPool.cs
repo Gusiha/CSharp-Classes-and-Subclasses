@@ -26,7 +26,11 @@
     {
         private BowlingObjectPool() : base()
         {
-
+            for (int i = 0; i < restrictor; i++)
+            {
+                BowlingBall bowlingBall = new();
+                FreeList.Add(bowlingBall);
+            }
         }
 
         private static BowlingObjectPool instance;

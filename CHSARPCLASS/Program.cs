@@ -12,9 +12,24 @@ namespace Testing
         {
             var Pool = BowlingObjectPool.GetInstance();
 
-            var ball = Pool.GetObject();
+            BowlingBall[] balls = new BowlingBall[6];
 
-            Score += ball.Throw();
+            for (int i = 0; i < 6; i++)
+            {
+                balls[i] = Pool.GetObject();
+                Score+=balls[i].Throw();
+            }
+
+            for (int i = 0; i < 5; i++)
+            {
+                Pool.ReleaseObject(balls[i]);
+            }
+
+
+
+            
+
+            
 
             Console.WriteLine(Score);
         }
