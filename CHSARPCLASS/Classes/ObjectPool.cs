@@ -1,6 +1,6 @@
 ﻿namespace CHSARPCLASS.Classes
 {
-    public abstract class ObjectPool<T>
+    public abstract class ObjectPool<T> where T : class, new()
     {
         protected static readonly object Locker = new();
 
@@ -13,7 +13,11 @@
         protected ObjectPool()
         {
             UsedList = new List<T>();
-            FreeList = new List<T>(restrictor / 2);
+            for (int i = 0; i < restrictor; i++)
+            {
+                T obj = new T();    
+                FreeList.Add(obj);
+            }
         }
 
         public abstract T GetObject();
@@ -24,7 +28,7 @@
 
     public class BowlingObjectPool : ObjectPool<BowlingBall>
     {
-        private BowlingObjectPool()
+        private BowlingObjectPool() : base()
         {
 
         }

@@ -8,5 +8,10 @@
         {
             return random.Next(10);
         }
+
+        public BowlingBall()
+        {
+
+        }
     }
 }
