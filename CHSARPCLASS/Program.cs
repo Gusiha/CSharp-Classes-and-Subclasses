@@ -9,7 +9,7 @@ namespace Testing
         static void Main()
         {
             var Pool = BowlingObjectPool.GetInstance();
-            Pool.
+            
 
         }
     }
