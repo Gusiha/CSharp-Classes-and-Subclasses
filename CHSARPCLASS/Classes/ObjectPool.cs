@@ -13,11 +13,7 @@
         protected ObjectPool()
         {
             UsedList = new List<T>();
-            for (int i = 0; i < restrictor; i++)
-            {
-                T obj = new T();    
-                FreeList.Add(obj);
-            }
+            FreeList= new List<T>();
         }
 
         public abstract T GetObject();
