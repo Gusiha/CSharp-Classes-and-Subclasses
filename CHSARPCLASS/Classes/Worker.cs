@@ -42,5 +42,10 @@ namespace CHSARPCLASS.Classes
             Age = age;
             Workplace = workplace;
         }
+
+        public Worker()
+        {
+
+        }
     }
 }

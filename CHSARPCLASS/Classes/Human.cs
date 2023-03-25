@@ -52,6 +52,11 @@ namespace CHSARPCLASS.Classes
         {
             return $"Human. Name: {Name}, Age: {Age}";
         }
+
+        public Human()
+        {
+
+        }
     }
 
 }
